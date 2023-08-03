@@ -21,7 +21,7 @@ ws = wb.active
 # C2, D6, D13 셀에 오늘 날짜 업데이트
 ws['C2'] = today.strftime("%y.%m.%d")
 ws['D6'] = today.strftime("%m.%d")
-ws['D13'] = today.strftime("%m.%d")
+ws['D13'] = (today+datetime.timedelta(1)).strftime("%m.%d")
 
 # 엑셀 파일 저장
 wb.save(dest_file)
